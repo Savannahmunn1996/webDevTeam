@@ -20,7 +20,7 @@ class Employee {
     return this.id;
   }
 
-  getMail() {
+  getEmail() {
     console.log(`email: ${this.email}`);
     return this.email;
   }
