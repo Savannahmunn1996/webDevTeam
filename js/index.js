@@ -58,3 +58,109 @@ const init = async () => {
     }
   });
 };
+
+const managerQuestions = [
+  {
+    type: "input",
+    message: "What is Manager Name?",
+    name: "name",
+    validate: validateInput,
+  },
+  {
+    type: "input",
+    message: "Employee Id?",
+    name: "id",
+
+    validate: validateInput,
+  },
+  {
+    type: "input",
+    message: "Office Number?",
+    name: "officeNumber",
+    validate: validateInput,
+  },
+  {
+    type: "input",
+    message: "Enter Email Please",
+    name: "email",
+    validate: validateInput,
+  },
+];
+
+const managerAnswers = await.inquirer.prompt(managerQuestions);
+const manager = new Manager(manageAnswers);
+
+
+employees.push(manager);
+
+//creating engineer
+const createEngineer = async() =>{
+    const engineerQuestions =[
+        {
+            type:"input",
+            message:"What is Engineer Name?",
+            name:"name",
+            validate:validateInput,
+        },
+        {
+        type:"input",
+        message:"engineer id?",
+        name:"id",
+        validate:validateInput,
+        },
+        {
+            type:"input",
+            message:"What is Engineer email?",
+            name:"email",
+            validate:validateInput,
+        },
+        {
+            type:"github",
+            message:"What is the engineer github?",
+            name:"github",
+            validate:validateInput,
+        }
+
+    ];
+    const engineerAnswers = await inquirer.prompt(engineerQuestions);
+    const engineer = new Engineer(engineerAnswers);
+    employees.push(engineer);
+
+}
+
+
+const createIntern = async() =>{
+
+const internQuestions =[
+
+{type:"input",
+message:"What is Intern name?",
+name:"name",
+validate:validateInput,
+},
+{
+    type:"input",
+    message:"Intern id?",
+    name:"id",
+    validate:validateInput,
+},
+{
+    type:"input",
+    message:"What is Intern email?",
+    name:"email",
+    validate:validateInput,
+},
+{
+    type:"input",
+    message:"What is Intern school?",
+    name:"school",
+    validate:validateInput,
+}
+];
+const internAnswers = await inquirer.prompt(internQuestions);
+const intern = new intern(internAnswers);
+employees.push(intern);
+
+};
+
+init();
